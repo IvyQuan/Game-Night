@@ -1,31 +1,22 @@
-# Advanced React Starter Template
-A Trends in Web Development Starter Template.
+# Game Night
+A web app for hosting game nights: create a session, add players, play 3 games, and track scores on a live leaderboard.
 
-# current status
-built a temporary score tracker that adds data to a database stoed as node js on the server the code runs (see server/data/leaderboard)
-with help of lots of google and some claude, created a rudementary front end that allows a game session to be made by typing in names. the names can have points assigned in the next page. 
-We will implement games to play that then will factor into points, however for now we have a temporary blank page. The current page is to test if point adding/subtracting works. 
-End game will change the stats in the leaderboard page. This is saved to the server data, and pulled from it to display data. 
+**Live demo:** https://drive.google.com/file/d/1ziNoWLZbALkj62h5s0NgLBoq0aFA71cU/view 
 
-# create server by cd into ur trends project then - \server
-# pnpn install 
-# node index.js
-^this is temp until we get an acc database...
+## Features
+- Create a game session by entering player names
+- Play Wavelength, 2 truths 1 lie, and triva; points update automatically
+- Each game features AI generation options (e.g. generate a question and possible answers for trivia or make your own)
+- End-of-game flow that saves results and updates the leaderboard
+- Persistent leaderboard backed by Firestore
 
-# create frontend by cd-ing out of the server 
-# pnpm run dev as usual
+## Tech Stack
+- **Frontend:** React, TypeScript, Vite, Mantine UI, React Router
+- **Backend:** Node.js, Express (REST API)
+- **Database:** Firebase Firestore
 
-
-
-
-
-This template is appropriate for:
-
--   More complex frontends
--   Final projects
--   Etc.
-
-Note that it does NOT contain a backend! This is only for the frontend.
+## Architecture
+React frontend → Express REST API → Firestore
 
 It features the following:
 
@@ -40,32 +31,14 @@ It also utilizes the following core libraries:
 -   SWC![alt text](image.png)
 -   TypeScript
 -   Pnpm
+-   
+## Getting Started
+**Prerequisites:** Node.js, pnpm, a Firebase project
 
-## Development
+1. Clone the repo and run `pnpm install` in both the root and `server/`
+2. Add your Firebase credentials to `server/.env` (see `.env.example`)
+3. Start the server: `cd server && node index.js`
+4. Start the frontend: `pnpm dev`
+5. Open `http://localhost:5173`
 
-### Setup
-# does this work
-# test test this is brooke
 
-First, run `pnpm install` to install all dependencies.
-
-Then, run `pnpm dev` to start the development server.
-
-You can then visit `http://localhost:5173` to view the app.
-
-### Project Structure
-
-Here's a brief overview of the parts of the project you are encouraged to edit:
-
--   `src/components`: Put your custom React components here.
--   `src/pages`: Put entire routed pages here, composed of components.
--   `src/constants/Navigation.tsx`: If you create more or delete pages, you'll need to update this file with your changes.
-
-Here's a brief technical explanation of the rest of the project:
-
--   `src/App.tsx`: The root React component. In here, I've setup a component library, as well as routing, for you already. You may customize it, but you don't have to unless you know what you're doing.
--   `src/index.css`: The global CSS file. You can add global styles here.
-
-Additionally:
-
--   `src/assets`: Put any static assets here, such as images. Import and use them freely.
